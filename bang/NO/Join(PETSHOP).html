@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/mystyle.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./jquery-3.6.0.min.js"></script>
+
+  <script Language="javascript">
+    function selectEmail(){    
+      if (form.emailC.value == '1') {
+            form.emailB.readOnly = false;
+            form.emailB.value = '';
+            form.emailB.focus();
+        }
+        else {
+            form.emailB.readOnly = true;
+            form.emailB.value = form.email_select.value;
+        }
+    }
+  </script>
+
+
+</head>
+<body>
+ 
+<!--로고-->
+<div style="float: left;"><a href="pet_shop.html"><img src="./IMG/dogshop.png" alt="logo" style="width:120px;height:100px;"> 
+</a></div>
+<div style="float: right;">
+  <a href="./login.html" class="btn btn-outline-success">Sign in</a>
+  <a href="./Join.html" class="btn btn-outline-success">Join Us</a>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Our SNS" data-bs-content="Some content inside the popover">
+      follow us
+    </button>
+    
+  <script>
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+  </script>
+  
+  </div><div style="clear:both"></div>
+
+
+
+<!--로고 끝-->
+
+<!-- 메뉴바 -->
+<t>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">Menu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Dog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Cat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Custumer Service</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">About Seller</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-light" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</t>
+
+
+
+<!--폼작성-->
+<div style="position: relative; top: 100px; left: 100px; float: left;">
+   
+<h2><b>Join Us</b></h2>
+<h4>Create your account.</h4>
+<form method="get" action="./complete(PETSHOP).jsp" name ="JoinUs">
+    <label for="username">ID:</label><br>
+    <input type="text" id="cid" name="cid" value="your id"  onfocus="this.value=''";><br><br>
+
+    <label for="pwd" >비밀번호:</label><br>
+    <input type="password" id="cpwd" name="cpwd" value="your password"  onfocus="this.value=''";><br><br>
+    
+    <label for="cname" ></label>성명:</label><br>
+    <input type="text" name="cname" id="cname" value="your Name" onfocus="this.value=''" size = 12px;><br><br>
+  
+    <label for="tel">phone Number:</label><br>
+    <select id ="tel" name=tel>    
+      <option value=010>010</option>
+      <option value=011>011</option>
+      <option value=070>017</option>
+      <option value=017>019</option>
+      <option value=017>070</option>
+      </select>
+    <input type="text" id="telA" name="telA" size = 5px maxlength="9999">
+    <input type="text" id="telB" name="telB" size = 5px maxlength="9999"><br><br>  
+
+      <!--이메일 셋팅-->
+    <label for="email">Email:</label><br>
+    <input type="text" id="emailA" name="emailA" value="your mail" onfocus="this.value='';" size=10px>@
+       <select name="emailC" id="emailC" onchange="selectEmail()">  
+    <option value="select">select me</option>
+    <option value="naver.com" >naver.com</option>
+    <option value="gmail.com">gmail.com</option>
+    <option value="outlook.com">outlook.com</option>
+    <option value="nate.com">nate.com</option>
+    <option value="daum.com">daum.net</option>
+       </select><br><br>
+
+    <!--특수 정보-->
+    <h4><b>Please insert your pet's information.</b></h4>
+    <label for="Pet">What's your pet?</label><br>
+    <input type="radio" id="cpet" name="cpet" value="dog">dog   
+    <input type="radio" id="cpet" name="cpet" value="cat">cat
+    <input type="radio" id="cpet" name="cpet" value="other">other(turtle,hamster..)
+    <input type="radio" id="cpet" name="cpet" value="none">None<br><br>
+
+    <label for="cpname">what is your pet's name?:</label><br>
+    <input type="text" id="cpname" name="cpname" value="so cute!"  onfocus="this.value=''";><br><br>
+    
+    
+    <label for="cpbday">When your pet's birthday?</label><br>
+    <b5>※We will send some coupons for your pet in her(his) Bday! </b5><br>
+    <input type="date" id="cpbday" name="cpbday"><br><br>
+
+    <label for="AD"><b>Receive Our E-mail:(AD, Coupon etc)</b></label><br>
+    <input type="radio" id="yes" name="AD" value=True>Yes   
+    <input type="radio" id="no" name="AD" value=False>No<br><br>
+
+
+  <h4><b>Please conform your form.</b></h4>
+
+  <input type="submit" value="submit">
+  <input type="reset" value="reset">    
+  </form><br><br><br><br><br>
+</div>
+
+<!--옆에 광고-->
+<br><br>
+<div style="float: right; top: 100px;">
+<img src="./IMG/AD.png" alt="AD">
+</div>
